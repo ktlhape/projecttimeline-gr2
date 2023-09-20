@@ -1,0 +1,28 @@
+﻿<Page x:Class="ProjectTimelineGR2.Views.pgCapture"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProjectTimelineGR2.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Capture Project Details">
+
+    <Grid>
+        <Label Content="Project Code" HorizontalAlignment="Left" Margin="46,21,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtCode" HorizontalAlignment="Left" Margin="46,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="202" FontSize="18" TextChanged="txtCode_TextChanged"/>
+        <Label Content="Project Name" HorizontalAlignment="Left" Margin="400,21,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtProjectName" Margin="400,63,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" HorizontalAlignment="Left" Width="202"/>
+        <Label Content="Start Date" HorizontalAlignment="Left" Margin="46,114,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <DatePicker Name="dtpStartDate" HorizontalAlignment="Left" Margin="46,156,0,0" VerticalAlignment="Top" FontSize="18" Width="202"/>
+        <Label Content="End Date" HorizontalAlignment="Left" Margin="400,114,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <DatePicker x:Name="dtpEndDate" HorizontalAlignment="Left" Margin="400,156,0,0" VerticalAlignment="Top" FontSize="18" Width="202"/>
+        <Label Content="Duration" HorizontalAlignment="Left" Margin="46,280,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtDuration" IsEnabled="False" Margin="46,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" HorizontalAlignment="Left" Width="202"/>
+        <Label Content="Estimated Cost" HorizontalAlignment="Left" Margin="400,280,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtEstCost" IsEnabled="False" Margin="400,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" HorizontalAlignment="Left" Width="202"/>
+        <Button Name="btnSave" IsEnabled="False" Content="SAVE" HorizontalAlignment="Left" Margin="46,377,0,0" VerticalAlignment="Top" FontSize="18" Height="41" Width="110" Click="btnSave_Click" Background="#FF1DBB37" Foreground="White"/>
+        <Label Content="Hourly Rate" HorizontalAlignment="Left" Margin="46,198,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="txtRate" Margin="46,237,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="18" HorizontalAlignment="Left" Width="202"/>
+    </Grid>
+</Page>
