@@ -28,3 +28,11 @@ D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\obj\Debug\net7.0-windows\re
 D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\obj\Debug\net7.0-windows\ProjectTimelineGR2.pdb
 D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\obj\Debug\net7.0-windows\ProjectTimelineGR2.genruntimeconfig.cache
 D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\obj\Debug\net7.0-windows\ref\ProjectTimelineGR2.dll
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\bin\Debug\net7.0-windows\EntityFramework.SqlServer.dll
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\bin\Debug\net7.0-windows\EntityFramework.dll
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\bin\Debug\net7.0-windows\System.Data.SqlClient.dll
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\bin\Debug\net7.0-windows\runtimes\win-arm64\native\sni.dll
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\bin\Debug\net7.0-windows\runtimes\win-x64\native\sni.dll
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\bin\Debug\net7.0-windows\runtimes\win-x86\native\sni.dll
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\bin\Debug\net7.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\bin\Debug\net7.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

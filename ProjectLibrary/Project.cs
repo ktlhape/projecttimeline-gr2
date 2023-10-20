@@ -4,11 +4,13 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
 
 namespace ProjectLibrary
 {
     public class Project
     {
+        string strCon = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=ProjectDBGR2;Integrated Security=True";
         public string? Code { get; set; }
         private string? _projectName;
 
@@ -48,15 +50,7 @@ namespace ProjectLibrary
         public DateTime EndDate { get; set; }
         public int Duration { get; set; }
         public double EstimatedCost { get; set; }
-        public static List<Project> prList = new List<Project>() { 
-        new("P100","SONY",Convert.ToDateTime("06-05-2023"),Convert.ToDateTime("16-06-2023"),150),
-        new("P101","Xbox",Convert.ToDateTime("09-05-2023"),Convert.ToDateTime("16-07-2023"),230),
-        new("P102","Microsoft",Convert.ToDateTime("02-04-2023"),Convert.ToDateTime("16-06-2023"),180),
-        new("P103","Nokia",Convert.ToDateTime("21-06-2023"),Convert.ToDateTime("16-09-2023"),155),
-        new("P104","Panasonic",Convert.ToDateTime("25-07-2023"),Convert.ToDateTime("22-10-2023"),125),
-        new("P105","Anglo",Convert.ToDateTime("11-11-2023"),Convert.ToDateTime("16-01-2024"),250),
-        new("P106","Implats",Convert.ToDateTime("07-05-2023"),Convert.ToDateTime("19-08-2023"),230)
-        };
+        public static List<Project> prList = new List<Project>();
 
         public Project() { }
         public Project(string? code, string? projectName, DateTime startDate, DateTime endDate,double rate)
@@ -70,8 +64,52 @@ namespace ProjectLibrary
             EstimatedCost = CalcEstCost(rate);
         }
 
+        public Project(string? code, string? projectName, DateTime startDate, DateTime endDate, int duration, double estimatedCost)
+        {
+            Code = code;
+            ProjectName = projectName;
+            StartDate = startDate;
+            EndDate = endDate;
+            Duration = duration;
+            EstimatedCost = estimatedCost;
+        }
+
         public double CalcEstCost(double rate) =>
          (rate * 8) * Duration;
+
+        public void AddProject()
+        {
+            string strInsert = $"INSERT INTO tblProject VALUES('{Code}','{ProjectName}'," +
+                $"'{StartDate.ToString("yyyy-MM-dd")}','{EndDate.ToString("yyyy-MM-dd")}'," +
+                $"{Duration},{EstimatedCost})";
+            using (SqlConnection con = new SqlConnection(strCon))
+            {
+                SqlCommand cmdInsert = new SqlCommand(strInsert, con);
+                con.Open();
+                cmdInsert.ExecuteNonQuery();
+            }
+        }
+        public List<Project> AllProjects()
+        {
+            List<Project> ls = new();
+            using (SqlConnection con = new SqlConnection(strCon))
+            {
+                string strSelect = "SELECT * FROM tblProject";
+                SqlCommand cmdSelect = new SqlCommand(strSelect, con);
+                con.Open();
+                using (SqlDataReader reader = cmdSelect.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ls.Add(new((string)reader[0], (string)reader["ProjectName"], 
+                            Convert.ToDateTime(reader[2]), Convert.ToDateTime(reader[3]),
+                            (int)reader[4], (double)reader.GetDouble(5)));
+                    }
+                }
+
+            }
+            return ls;
+        }
 
         //(PR123)  SISONKE - 14 days, EC: R22 400.00. 
         public override string ToString() =>

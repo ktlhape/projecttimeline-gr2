@@ -21,13 +21,12 @@ namespace ProjectTimelineGR2.Views
     /// </summary>
     public partial class pgCapture : Page
     {
-        DateTime semesterDate = Convert.ToDateTime("04-09-2023");
+
 
         public pgCapture()
         {
             InitializeComponent();
-            dtpStartDate.DisplayDateStart = semesterDate;
-            dtpStartDate.DisplayDateEnd = semesterDate.AddDays(50);
+
 
         }
 
@@ -47,7 +46,8 @@ namespace ProjectTimelineGR2.Views
 
                 Project p = new Project(code, prName, start, end,rate);
 
-                Project.prList.Add(p);
+                //Project.prList.Add(p);
+                p.AddProject();
 
                 txtEstCost.Text = p.EstimatedCost.ToString("C2");
                 txtDuration.Text = p.Duration.ToString();
