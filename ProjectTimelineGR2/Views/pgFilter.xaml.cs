@@ -46,10 +46,10 @@ namespace ProjectTimelineGR2.Views
                 ls = Project.Completed();
             }else if (cmbFilter.SelectedIndex == 3)
             {
-                ls = Project.MoreThanSixWeeks();
+               // ls = Project.MoreThanSixWeeks();
             }else if (cmbFilter.SelectedIndex == 4)
             {
-                ls = Project.BetweenDates(Convert.ToDateTime("06-05-2023"), Convert.ToDateTime("16-06-2023"));
+               // ls = Project.BetweenDates(Convert.ToDateTime("06-05-2023"), Convert.ToDateTime("16-06-2023"));
             }
 
             foreach (Project p in ls)

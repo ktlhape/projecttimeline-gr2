@@ -10,7 +10,6 @@ namespace ProjectLibrary
 {
     public class Project
     {
-        string strCon = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=ProjectDBGR2;Integrated Security=True";
         public string? Code { get; set; }
         private string? _projectName;
 
@@ -82,7 +81,7 @@ namespace ProjectLibrary
             string strInsert = $"INSERT INTO tblProject VALUES('{Code}','{ProjectName}'," +
                 $"'{StartDate.ToString("yyyy-MM-dd")}','{EndDate.ToString("yyyy-MM-dd")}'," +
                 $"{Duration},{EstimatedCost})";
-            using (SqlConnection con = new SqlConnection(strCon))
+            using (SqlConnection con = Connections.GetConnection())
             {
                 SqlCommand cmdInsert = new SqlCommand(strInsert, con);
                 con.Open();
@@ -92,7 +91,7 @@ namespace ProjectLibrary
         public List<Project> AllProjects()
         {
             List<Project> ls = new();
-            using (SqlConnection con = new SqlConnection(strCon))
+            using (SqlConnection con = Connections.GetConnection())
             {
                 string strSelect = "SELECT * FROM tblProject";
                 SqlCommand cmdSelect = new SqlCommand(strSelect, con);
@@ -153,9 +152,28 @@ namespace ProjectLibrary
         /// <returns>A list of projects</returns>
         public static List<Project> MoreThanSixWeeks()
         {
-            return (from p in prList
-                    where (p.Duration / 5) > 6
-                    select p).ToList();
+            List<Project> ls = new();
+            using (SqlConnection con = Connections.GetConnection())
+            {
+                string strSelect = "SELECT * FROM tblProject";
+                SqlCommand cmdSelect = new SqlCommand(strSelect, con);
+                con.Open();
+                using (SqlDataReader reader = cmdSelect.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ls.Add(new((string)reader[0], (string)reader["ProjectName"],
+                            Convert.ToDateTime(reader[2]), Convert.ToDateTime(reader[3]),
+                            (int)reader[4], (double)reader.GetDouble(5)));
+                    }
+                }
+
+            }
+            return ls;
+
+            //return (from p in prList
+            //        where (p.Duration / 5) > 6
+            //        select p).ToList();
 
         }
         /// <summary>
@@ -164,11 +182,34 @@ namespace ProjectLibrary
         /// <param name="start">Start date to be provided</param>
         /// <param name="end">End date to be provided</param>
         /// <returns>A list of projects</returns>
-        public static List<Project> BetweenDates(DateTime start, DateTime end) =>
-           (from p in prList
-            where p.StartDate >= start &&
-            p.EndDate <= end
-            select p).ToList();
+        public static  List<Project> BetweenDates(DateTime start, DateTime end)
+        {
+            List<Project> ls = new();
+            using (SqlConnection con = Connections.GetConnection())
+            {
+                string strSelect = $"SELECT * FROM tblProject WHERE StartDate >= {start} AND EndDate <= {end}";
+                SqlCommand cmdSelect = new SqlCommand(strSelect, con);
+                con.Open();
+                using (SqlDataReader reader = cmdSelect.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ls.Add(new((string)reader[0], (string)reader["ProjectName"],
+                            Convert.ToDateTime(reader[2]), Convert.ToDateTime(reader[3]),
+                            (int)reader[4], (double)reader.GetDouble(5)));
+                    }
+                }
+
+            }
+            return ls;
+
+            //(from p in prList
+            // where p.StartDate >= start &&
+            // p.EndDate <= end
+            // select p).ToList();
+
+        }
+           
 
         /// <summary>
         /// Get all the projects that have completed

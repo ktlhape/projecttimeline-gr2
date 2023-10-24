@@ -36,3 +36,5 @@ D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\bin\Debug\net7.0-windows\ru
 D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\bin\Debug\net7.0-windows\runtimes\win-x86\native\sni.dll
 D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\bin\Debug\net7.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\bin\Debug\net7.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\obj\Debug\net7.0-windows\Views\Login.g.cs
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\obj\Debug\net7.0-windows\Views\Login.baml
