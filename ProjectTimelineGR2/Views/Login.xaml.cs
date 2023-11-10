@@ -35,8 +35,8 @@ namespace ProjectTimelineGR2.Views
             {
                 if (em.Password.Equals(pass))
                 {
-                    MessageBox.Show($"Hello {em.Firstname} {em.Lastname}");
                     MainWindow main = new MainWindow();
+                    main.Tag = em;
                     main.ShowDialog();
                 }
                 else

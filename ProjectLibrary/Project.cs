@@ -88,7 +88,7 @@ namespace ProjectLibrary
                 cmdInsert.ExecuteNonQuery();
             }
         }
-        public List<Project> AllProjects()
+        public static List<Project> AllProjects()
         {
             List<Project> ls = new();
             using (SqlConnection con = Connections.GetConnection())
@@ -109,6 +109,28 @@ namespace ProjectLibrary
             }
             return ls;
         }
+        public static List<Project> EmployeeProjects(string empNo)
+        {
+            List<Project> ls = new();
+            using (SqlConnection con = Connections.GetConnection())
+            {
+                string strSelect = $"select * from tblProject where PrCode in (select Code from tblAssignment where EmployeeNo = '{empNo}')";
+                SqlCommand cmdSelect = new SqlCommand(strSelect, con);
+                con.Open();
+                using (SqlDataReader reader = cmdSelect.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ls.Add(new((string)reader[0], (string)reader["ProjectName"],
+                            Convert.ToDateTime(reader[2]), Convert.ToDateTime(reader[3]),
+                            (int)reader[4], (double)reader.GetDouble(5)));
+                    }
+                }
+
+            }
+            return ls;
+        }
+
 
         //(PR123)  SISONKE - 14 days, EC: R22 400.00. 
         public override string ToString() =>

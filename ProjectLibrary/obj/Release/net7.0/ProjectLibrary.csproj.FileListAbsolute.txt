@@ -1,0 +1,14 @@
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectLibrary\bin\Release\net7.0\ProjectLibrary.deps.json
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectLibrary\bin\Release\net7.0\ProjectLibrary.runtimeconfig.json
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectLibrary\bin\Release\net7.0\ProjectLibrary.dll
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectLibrary\bin\Release\net7.0\ProjectLibrary.pdb
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectLibrary\obj\Release\net7.0\ProjectLibrary.csproj.AssemblyReference.cache
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectLibrary\obj\Release\net7.0\ProjectLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectLibrary\obj\Release\net7.0\ProjectLibrary.AssemblyInfoInputs.cache
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectLibrary\obj\Release\net7.0\ProjectLibrary.AssemblyInfo.cs
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectLibrary\obj\Release\net7.0\ProjectLibrary.csproj.CoreCompileInputs.cache
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectLibrary\obj\Release\net7.0\ProjectLibrary.dll
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectLibrary\obj\Release\net7.0\refint\ProjectLibrary.dll
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectLibrary\obj\Release\net7.0\ProjectLibrary.pdb
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectLibrary\obj\Release\net7.0\ProjectLibrary.genruntimeconfig.cache
+D:\VC\PROG6212\ProjectTimelineGR2\ProjectLibrary\obj\Release\net7.0\ref\ProjectLibrary.dll

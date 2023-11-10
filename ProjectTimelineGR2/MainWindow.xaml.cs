@@ -1,4 +1,5 @@
-﻿using ProjectTimelineGR2.Views;
+﻿using ProjectLibrary;
+using ProjectTimelineGR2.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,19 @@ namespace ProjectTimelineGR2
         private void btnDisplay_Click(object sender, RoutedEventArgs e)
         {
             frmContainer.Content = display;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Employee emp = (Employee)this.Tag;
+            this.Title = $"Welcome [{emp.EmployeeNo}] {emp.Firstname} {emp.Lastname}";
+
+        }
+
+        private void btnAssignProject_Click(object sender, RoutedEventArgs e)
+        {
+            pgAssignProject pg_assignProject = new();
+            frmContainer.Content = pg_assignProject;
         }
     }
 }

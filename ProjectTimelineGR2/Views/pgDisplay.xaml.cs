@@ -29,8 +29,7 @@ namespace ProjectTimelineGR2.Views
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             dgvDisplay.Items.Clear();
-            Project pr = new Project();
-            foreach (Project p in pr.AllProjects())
+            foreach (Project p in Project.AllProjects())
             {
                 dgvDisplay.Items.Add(p);
             }

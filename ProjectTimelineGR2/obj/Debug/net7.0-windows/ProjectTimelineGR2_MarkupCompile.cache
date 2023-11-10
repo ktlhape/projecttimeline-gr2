@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 D:\VC\PROG6212\ProjectTimelineGR2\ProjectTimelineGR2\App.xaml
-5729205237
+61404637411
 
-7-579807442
+82000815044
 202-2091084205
-MainWindow.xaml;Views\Login.xaml;Views\pgCapture.xaml;Views\pgDisplay.xaml;Views\pgFilter.xaml;
+MainWindow.xaml;Views\Login.xaml;Views\pgAssignProject.xaml;Views\pgCapture.xaml;Views\pgDisplay.xaml;Views\pgFilter.xaml;
 
 False
 

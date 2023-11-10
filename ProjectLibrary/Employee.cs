@@ -46,5 +46,26 @@ namespace ProjectLibrary
 
             return em;
         }
+
+        public static List<Employee> AllEmployees()
+        {
+            List<Employee> empList = new List<Employee>();
+            using (SqlConnection con = Connections.GetConnection())
+            {
+                string strSelect = $"SELECT * FROM tblEmployee";
+                SqlCommand cmdSelect = new SqlCommand(strSelect, con);
+                con.Open();
+                using (SqlDataReader rd = cmdSelect.ExecuteReader())
+                {
+                    while (rd.Read())
+                    {
+                        empList.Add(new Employee(rd.GetString(0), rd.GetString(1),
+                            rd.GetString(2), rd.GetString(4), rd.GetDouble(3),
+                            rd.GetString(5)));
+                    }
+                }
+            }
+            return empList;
+        }
     }
 }
