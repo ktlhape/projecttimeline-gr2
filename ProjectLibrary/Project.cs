@@ -109,6 +109,11 @@ namespace ProjectLibrary
             }
             return ls;
         }
+        /// <summary>
+        /// Get employee projects
+        /// </summary>
+        /// <param name="empNo">Employee number to be spcified</param>
+        /// <returns></returns>
         public static List<Project> EmployeeProjects(string empNo)
         {
             List<Project> ls = new();
@@ -177,7 +182,7 @@ namespace ProjectLibrary
             List<Project> ls = new();
             using (SqlConnection con = Connections.GetConnection())
             {
-                string strSelect = "SELECT * FROM tblProject";
+                string strSelect = "SELECT * FROM tblProject"; //Complete the statemnet
                 SqlCommand cmdSelect = new SqlCommand(strSelect, con);
                 con.Open();
                 using (SqlDataReader reader = cmdSelect.ExecuteReader())
@@ -224,11 +229,6 @@ namespace ProjectLibrary
 
             }
             return ls;
-
-            //(from p in prList
-            // where p.StartDate >= start &&
-            // p.EndDate <= end
-            // select p).ToList();
 
         }
            

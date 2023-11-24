@@ -25,6 +25,7 @@ namespace ProjectLibrary
             Salary = salary;
             EmpType = empType;
         }
+        public Employee() { }
         public static Employee GetEmployee(string empNo)
         {
             Employee em = new Employee("None","No name","No Lastname","None",0,"None");
